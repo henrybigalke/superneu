@@ -6,6 +6,7 @@ Thumbs.db
 *.swp
 .vscode/
 .idea/
+.claude/
 
 # Video-Master (nicht deployen – nur die optimierte Version in assets/ wird committet)
 /250326_SUPER_NEU HEADER_clean.mp4
