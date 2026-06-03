@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>SUPER NEU · Bureau · Mobile</title>
+<meta name="description" content="SUPER NEU – Bureau de Production für Werbefilm in Hamburg. Strategisch und emotional: Wir machen Kunden zu Fans.">
+<link rel="canonical" href="https://www.superneu.co/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SUPER NEU">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://www.superneu.co/">
+<meta property="og:title" content="SUPER NEU · Bureau de Production · Werbefilm Hamburg">
+<meta property="og:description" content="SUPER NEU – Bureau de Production für Werbefilm in Hamburg. Strategisch und emotional: Wir machen Kunden zu Fans.">
+<meta property="og:image" content="https://www.superneu.co/assets/henning-henry-01.jpg">
+<meta property="og:image:width" content="6720">
+<meta property="og:image:height" content="4480">
+<meta property="og:image:alt" content="SUPER NEU – Werbefilmproduktion Hamburg">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SUPER NEU · Bureau de Production · Werbefilm Hamburg">
+<meta name="twitter:description" content="SUPER NEU – Bureau de Production für Werbefilm in Hamburg. Strategisch und emotional: Wir machen Kunden zu Fans.">
+<meta name="twitter:image" content="https://www.superneu.co/assets/henning-henry-01.jpg">
+<link rel="stylesheet" href="fonts.css">
+<style>
+/* =========================================================
+   MOBILE FIRST — base styles target ~390px phone.
+   min-width media queries scale UP to tablet / desktop.
+   ========================================================= */
+:root{
+  --ink:#0A0A0A; --black:#000; --paper:#F2EFE6; --paper-2:#E8E3D5;
+  --signal:#2A24FF; --pop:#FF4A1C;
+  --line:rgba(10,10,10,.16); --line-d:rgba(242,239,230,.18);
+  --pad:20px; --bar:64px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:'Archivo',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  padding-bottom:calc(var(--bar) + env(safe-area-inset-bottom,0px))}
+img{display:block;max-width:100%}
+.wrap{width:100%;max-width:1480px;margin:0 auto;padding:0 var(--pad)}
+.mono{font-family:'Space Mono',monospace}
+.tt{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+
+/* shots — natural footage, only a whisper of grade + bottom scrim for labels */
+.shot{position:relative;overflow:hidden;background:#111;isolation:isolate}
+.shot img{width:100%;height:100%;object-fit:cover;filter:contrast(1.03) saturate(1.02)}
+.shot::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.34),transparent 44%);pointer-events:none;z-index:1}
+.shot.bw img{filter:grayscale(1) contrast(1.05)}
+.shot.bw::after,.shot.blue::after,.shot.orange::after{background:linear-gradient(to top,rgba(0,0,0,.34),transparent 44%)}
+.shot .lbl{position:absolute;left:11px;bottom:10px;z-index:3;font-family:'Space Mono';font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.82);display:flex;align-items:center;gap:6px}
+.shot .lbl::before{content:"";width:0;height:0;border-left:7px solid rgba(255,255,255,.85);border-top:4px solid transparent;border-bottom:4px solid transparent}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:4;width:58px;height:58px;border-radius:50%;background:var(--pop);border:2px solid var(--black);display:grid;place-items:center}
+.play::after{content:"";width:0;height:0;border-left:16px solid var(--black);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.vid{cursor:pointer}
+
+/* ---------- NAV ---------- */
+.nav{position:sticky;top:0;z-index:60;background:var(--black);color:var(--paper);border-bottom:1px solid var(--line-d)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:54px}
+.nav .lg{display:flex;align-items:center;gap:6px;font-family:'Space Mono';font-weight:700;font-size:13px;letter-spacing:.04em;text-decoration:none;color:var(--paper)}
+.nav .lg sup{font-size:8px;opacity:.7}
+.navlinks{display:none}
+.nav .geo{display:none}
+.burger{width:48px;height:48px;margin-right:-12px;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;gap:5px;background:none;border:0;cursor:pointer}
+.burger span{width:24px;height:2px;background:var(--paper)}
+.burger span:nth-child(2){width:17px}
+
+/* ---------- HERO ---------- */
+.hero{background:var(--black);color:var(--paper);position:relative;overflow:hidden;padding:0 0 26px}
+.hero .bg{position:absolute;inset:0;z-index:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1) brightness(.5);opacity:.3}
+.hero .bg::after{content:"";position:absolute;inset:0;background:radial-gradient(130% 70% at 50% 14%,rgba(42,36,255,.34),transparent 60%),linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.9))}
+.hero .wrap{position:relative;z-index:2}
+.hero-top{display:flex;flex-direction:column;gap:5px;padding:18px 0 0;font-family:'Space Mono';font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:rgba(242,239,230,.6)}
+.hero-top span:nth-child(2){color:var(--pop)}
+.heromark{display:flex;justify-content:center;padding:26px 0 14px}
+.heromark img{width:90%;filter:invert(1)}
+.hero-mid .tag{font-family:'Bricolage Grotesque';font-weight:800;text-transform:uppercase;letter-spacing:-.02em;font-size:30px;line-height:.92;text-align:center}
+.hero-mid .tag em{font-style:normal;color:var(--pop)}
+.hero-reel{display:flex;align-items:center;gap:13px;cursor:pointer;margin-top:24px;border:2px solid var(--line-d);padding:13px 16px;min-height:56px}
+.hero-reel .rb{width:42px;height:42px;border-radius:50%;background:var(--pop);border:2px solid var(--paper);display:grid;place-items:center;flex-shrink:0}
+.hero-reel .rb::after{content:"";width:0;height:0;border-left:13px solid var(--black);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:3px}
+.hero-reel b{font-family:'Space Mono';font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block}
+.hero-reel span{font-family:'Space Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(242,239,230,.55)}
+.hero-bot{display:flex;justify-content:space-between;gap:12px;margin-top:20px;padding-top:14px;border-top:1px solid var(--line-d)}
+.hero-bot span{font-family:'Space Mono';font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,239,230,.6)}
+
+/* slash band */
+.slashband{background:var(--black);color:var(--paper);overflow:hidden;border-top:2px solid var(--black);border-bottom:2px solid var(--black)}
+.slashband .row{display:flex;white-space:nowrap;padding:11px 0;width:max-content;animation:slide 26s linear infinite;font-family:'Space Mono';font-weight:700;font-size:13px;letter-spacing:.18em}
+.slashband b{color:var(--pop)}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.slashband .row{animation:none}}
+
+/* ---------- SECTION ---------- */
+section{padding:60px 0}
+.eyebrow{display:flex;align-items:center;gap:10px;font-family:'Space Mono';font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--signal);margin-bottom:16px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--signal)}
+.sechead{font-family:'Bricolage Grotesque';font-weight:800;text-transform:uppercase;line-height:.9;letter-spacing:-.03em;font-size:clamp(40px,11vw,108px)}
+.sec-top{margin-bottom:30px}
+.sec-top p{font-size:15px;line-height:1.55;color:rgba(10,10,10,.7);margin-top:18px}
+
+/* MANIFESTO */
+.manifesto{background:var(--pop);color:var(--black);position:relative;overflow:hidden;padding:62px 0}
+.manifesto .stamps{position:absolute;right:-18px;top:18px;display:flex;z-index:1;pointer-events:none}
+.manifesto .stamps .stamp{display:none;width:96px}
+.manifesto .stamps .stamp:first-child{display:block}
+.manifesto .stamps .stamp svg{width:96px;height:96px}
+.manifesto h2{font-family:'Bricolage Grotesque';font-weight:800;text-transform:uppercase;line-height:.96;letter-spacing:-.02em;font-size:clamp(28px,8vw,76px);position:relative;z-index:2;max-width:16ch}
+.manifesto h2 em{font-style:normal;-webkit-text-stroke:1.5px var(--black);color:transparent;paint-order:stroke fill}
+.manifesto .meta{display:flex;flex-direction:column;gap:22px;margin-top:34px;position:relative;z-index:2}
+.manifesto .meta h5{font-family:'Space Mono';font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.65;margin-bottom:7px}
+.manifesto .meta p{font-family:'Space Mono';font-size:13px;line-height:1.65}
+
+/* FORMATE */
+.formate{border-top:2px solid var(--ink)}
+.fitem{display:block;padding:24px 0;border-bottom:2px solid var(--ink);position:relative}
+.fitem .idx{font-family:'Space Mono';font-weight:700;font-size:12px;letter-spacing:.06em;color:var(--pop)}
+.fitem h3{font-family:'Bricolage Grotesque';font-weight:800;text-transform:uppercase;line-height:.9;letter-spacing:-.03em;font-size:clamp(34px,11vw,64px);margin:6px 0 12px}
+.fitem p{font-size:15px;line-height:1.5;color:rgba(10,10,10,.72)}
+.fitem .for{display:block;margin-top:11px;font-family:'Space Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--signal)}
+.fitem .ar{position:absolute;top:24px;right:0;width:42px;height:42px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:17px}
+
+/* PROJEKTE */
+.projekte{background:var(--black);color:var(--paper)}
+.projekte .eyebrow{color:#7d78ff}.projekte .eyebrow::before{background:#7d78ff}
+.projekte .sec-top p{color:rgba(242,239,230,.7)}
+.feat2{display:flex;flex-direction:column;gap:34px}
+.feat .fimg{position:relative;aspect-ratio:16/10;border:2px solid var(--paper);overflow:hidden}
+.feat .ft{margin-top:14px}
+.feat h3{font-family:'Bricolage Grotesque';font-weight:800;text-transform:uppercase;font-size:30px;line-height:.92;letter-spacing:-.025em}
+.feat p{font-size:14px;line-height:1.5;color:rgba(242,239,230,.66);margin-top:9px}
+.feat .tg{display:inline-block;margin-top:11px;font-family:'Space Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line-d);padding:5px 10px;color:rgba(242,239,230,.8)}
+
+.visihead{margin:46px 0 18px;padding-top:26px;border-top:1px solid var(--line-d)}
+.visihead h3{font-family:'Bricolage Grotesque';font-weight:800;text-transform:uppercase;font-size:34px;letter-spacing:-.025em}
+.visihead span{display:block;margin-top:6px;font-family:'Space Mono';font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,239,230,.5)}
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.vcard{cursor:pointer}
+.vcard .vimg{position:relative;aspect-ratio:3/4;border:2px solid var(--paper);overflow:hidden}
+.vcard .play{width:44px;height:44px}.vcard .play::after{border-left:12px solid var(--black);border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
+.vcard .nm{display:flex;justify-content:space-between;align-items:baseline;margin-top:9px;gap:6px}
+.vcard .nm b{font-family:'Space Mono';font-weight:700;font-size:11px}
+.vcard .nm span{font-family:'Space Mono';font-size:9px;color:rgba(242,239,230,.45)}
+.vmore{display:grid;place-items:center;border:2px dashed var(--line-d);aspect-ratio:3/4}
+.vmore a{text-align:center;text-decoration:none;color:var(--paper)}
+.vmore b{font-family:'Bricolage Grotesque';font-weight:800;font-size:24px;display:block;line-height:1;text-transform:uppercase}
+.vmore span{font-family:'Space Mono';font-size:9px;letter-spacing:.1em;opacity:.5}
+
+/* STUDIO */
+.studio{background:var(--paper-2);border-top:2px solid var(--ink)}
+.studio blockquote{font-family:'Bricolage Grotesque';font-weight:800;text-transform:uppercase;line-height:.96;letter-spacing:-.025em;font-size:clamp(28px,8.5vw,56px)}
+.studio blockquote em{font-style:normal;color:var(--signal)}
+.studio .body{font-size:16px;line-height:1.6;color:rgba(10,10,10,.78);margin-top:20px}
+.crew{display:flex;flex-direction:column;gap:11px;margin-top:26px}
+.crew .c{border:2px solid var(--ink);padding:13px 15px;display:flex;gap:12px;align-items:center}
+.crew .av{width:46px;height:46px;border-radius:50%;border:2px solid var(--ink);overflow:hidden;flex-shrink:0}
+.crew .mav{width:46px;height:46px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-family:'Space Mono';font-weight:700;font-size:14px;flex-shrink:0}
+.crew b{font-family:'Space Mono';font-weight:700;font-size:13px;display:block}
+.crew span{font-family:'Space Mono';font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:rgba(10,10,10,.55)}
+.studio .pic{position:relative;aspect-ratio:4/5;border:2px solid var(--ink);margin-top:30px}
+
+/* CTA */
+.cta{background:var(--black);color:var(--paper);text-align:center;position:relative;overflow:hidden}
+.cta .mk{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:150%;opacity:.05;filter:invert(1);pointer-events:none}
+.cta .inner{position:relative;z-index:2}
+.cta .eyebrow{color:var(--pop);justify-content:center}.cta .eyebrow::before{background:var(--pop)}
+.cta h2{font-family:'Bricolage Grotesque';font-weight:800;text-transform:uppercase;line-height:.86;letter-spacing:-.035em;font-size:clamp(58px,19vw,180px)}
+.cta h2 em{font-style:normal;color:var(--pop)}
+.cta .row{display:flex;flex-direction:column;gap:11px;margin-top:30px}
+.cta .contact{display:flex;flex-direction:column;gap:22px;margin-top:40px;padding-top:26px;border-top:1px solid var(--line-d);text-align:left}
+.cta .contact .ck{display:block;font-family:'Space Mono';font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--pop);margin-bottom:7px}
+.cta .contact a,.cta .contact .v{color:var(--paper);text-decoration:none;font-family:'Space Mono';font-size:14px}
+
+/* buttons */
+.btn{display:flex;align-items:center;justify-content:center;gap:9px;font-family:'Space Mono';font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:13px;
+  padding:17px 22px;min-height:54px;cursor:pointer;border:2px solid currentColor;background:transparent;color:var(--paper);text-decoration:none}
+.btn.pop{background:var(--pop);color:var(--black);border-color:var(--black)}
+
+/* ---------- STICKY BOTTOM ACTION BAR (mobile-native) ---------- */
+.actionbar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:0;background:var(--black);
+  border-top:1px solid var(--line-d);padding-bottom:env(safe-area-inset-bottom,0px)}
+.actionbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;height:var(--bar);
+  font-family:'Space Mono';font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.actionbar .call{color:var(--paper);border-right:1px solid var(--line-d);flex:0 0 30%}
+.actionbar .ask{background:var(--pop);color:var(--black)}
+.actionbar svg{width:16px;height:16px}
+
+/* FOOTER */
+footer{background:var(--black);color:var(--paper);padding:26px 0 32px;border-top:1px solid var(--line-d);text-align:center}
+footer .fl{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:18px}
+footer .fl img{height:26px;filter:invert(1)}
+footer .fnav{display:flex;flex-wrap:wrap;gap:14px 22px;justify-content:center;font-family:'Space Mono';font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px}
+footer .fnav a{color:var(--paper);text-decoration:none;opacity:.62}
+footer .cap{font-family:'Space Mono';font-size:9px;letter-spacing:.1em;text-transform:uppercase;opacity:.45}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;padding:16px}
+.lb.open{display:flex}
+.lb .box{width:100%;aspect-ratio:16/9;position:relative}
+.lb iframe{width:100%;height:100%;border:0;background:#000}
+.lb .close{position:absolute;top:-42px;right:0;background:none;border:0;color:#fff;font-size:32px;cursor:pointer;font-family:'Space Mono'}
+
+/* mobile menu */
+.mmenu{position:fixed;inset:0;z-index:90;background:var(--black);color:var(--paper);display:none;flex-direction:column;padding:18px var(--pad) calc(28px + env(safe-area-inset-bottom,0px))}
+.mmenu.open{display:flex}
+.mmenu .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+.mmenu .top img{height:22px;filter:invert(1)}
+.mmenu .x{width:44px;height:44px;margin-right:-10px;background:none;border:0;color:var(--paper);font-size:30px;cursor:pointer;font-family:'Space Mono'}
+.mmenu nav{display:flex;flex-direction:column}
+.mmenu a{font-family:'Bricolage Grotesque';font-weight:800;text-transform:uppercase;font-size:38px;color:var(--paper);text-decoration:none;padding:16px 0;border-bottom:1px solid var(--line-d)}
+.mmenu .mfoot{margin-top:auto;font-family:'Space Mono';font-size:11px;letter-spacing:.08em;color:rgba(242,239,230,.55);padding-top:24px;line-height:1.7}
+.mmenu .mfoot a{font-family:'Space Mono';font-size:11px;display:inline;padding:0;border:0;color:var(--pop)}
+
+/* reveal */
+.reveal-on .rv{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+.reveal-on .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal-on .rv{opacity:1;transform:none;transition:none}}
+
+/* =========================================================
+   TABLET / DESKTOP ENHANCEMENTS (scale up)
+   ========================================================= */
+@media(min-width:760px){
+  :root{--pad:32px}
+  .navlinks{display:flex;gap:28px;margin-left:auto;margin-right:22px;font-family:'Space Mono';font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+  .navlinks a{color:var(--paper);text-decoration:none;opacity:.62}
+  .navlinks a:hover{opacity:1;color:var(--pop)}
+  .nav .geo{display:block;font-family:'Space Mono';font-size:11px;letter-spacing:.1em;opacity:.5;text-transform:uppercase}
+  .burger{display:none}
+  body{padding-bottom:0}
+  .actionbar{display:none}
+  section{padding:90px 0}
+  .hero-top{flex-direction:row;justify-content:space-between;padding-top:22px;font-size:11px}
+  .heromark img{width:min(980px,82%)}
+  .hero-mid .tag{font-size:clamp(34px,4.4vw,52px)}
+  .hero-bot{align-items:center}
+  .hero-reel{margin-top:0;border:0;padding:0}
+  .hero-reel .rb{width:50px;height:50px}
+  .manifesto{padding:90px 0}
+  .manifesto .stamps{right:-30px;top:50%;transform:translateY(-50%)}
+  .manifesto .stamps .stamp{display:block;width:150px;margin-left:-34px}
+  .manifesto .stamps .stamp svg{width:150px;height:150px}
+  .manifesto .meta{flex-direction:row;gap:54px}
+  .sec-top{display:flex;justify-content:space-between;align-items:flex-end;gap:26px}
+  .sec-top p{max-width:380px;margin-top:0}
+  .fitem{display:grid;grid-template-columns:96px 1.1fr 360px 56px;gap:30px;align-items:center}
+  .fitem h3{margin:0}
+  .fitem .for{margin-top:10px}
+  .fitem .ar{position:static;justify-self:end;width:48px;height:48px}
+  .feat2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .vgrid{grid-template-columns:repeat(4,1fr);gap:14px}
+  .studio .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+  .studio .pic{margin-top:0}
+  .crew{flex-direction:row;flex-wrap:wrap}
+  .cta .row{flex-direction:row;justify-content:center;gap:13px}
+  .cta .contact{flex-direction:row;justify-content:center;gap:50px;text-align:center}
+  .btn{display:inline-flex}
+  footer{text-align:left}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  footer .fl,.footer .fnav{margin:0}
+}
+@media(min-width:1100px){
+  .sechead{font-size:clamp(64px,7vw,108px)}
+  .hero-mid .tag{font-size:52px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="wrap">
+    <a href="#top" class="lg">SUPER&nbsp;NEU<sup>™</sup></a>
+    <div class="navlinks">
+      <a href="#formate">Formate</a>
+      <a href="#projekte">Projekte</a>
+      <a href="#studio">Studio</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+    <span class="geo">Hamburg · 53.5°N</span>
+    <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mmenu" id="mmenu">
+  <div class="top"><img src="assets/superneu-logo.png" alt="Super Neu"><button class="x" id="mclose" aria-label="Schließen">×</button></div>
+  <nav>
+    <a href="#formate">Formate</a><a href="#projekte">Projekte</a><a href="#studio">Studio</a><a href="#kontakt">Kontakt</a>
+  </nav>
+  <div class="mfoot">Werbefilmproduktion · Hamburg<br>Stockmeyerstraße 43 · 20457<br><a href="mailto:super@superneu.co">super@superneu.co</a></div>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="bg"><img src="assets/thumbs/6v0Mm45fCpM.jpg" alt=""></div>
+  <div class="wrap">
+    <div class="hero-top">
+      <span>Bureau de Production — Film</span>
+      <span>Est. ’24</span>
+      <span>20457 Hamburg, DE</span>
+    </div>
+    <div class="heromark"><img src="assets/superneu-logo.png" alt="Super Neu"></div>
+    <div class="hero-mid">
+      <span class="tag">Wir machen Kunden zu <em>Fans.</em></span>
+    </div>
+    <div class="hero-reel" data-yt="6v0Mm45fCpM">
+      <span class="rb"></span>
+      <span><b>Showreel ’24</b><span>Laufzeit 01:48 · jetzt ansehen</span></span>
+    </div>
+    <div class="hero-bot">
+      <span>Werbefilm · Hamburg</span>
+      <span>Strategisch · Emotional</span>
+    </div>
+  </div>
+</header>
+
+<!-- SLASH BAND -->
+<div class="slashband">
+  <div class="row" id="slashrow">
+    <span>SUPER&nbsp;BRAND&nbsp;FILM&nbsp;<b>/</b>&nbsp;SUPER&nbsp;VISIONARIES&nbsp;<b>/</b>&nbsp;SUPER&nbsp;HR&nbsp;FILM&nbsp;<b>/</b>&nbsp;ECHTE&nbsp;GESCHICHTEN&nbsp;<b>/</b>&nbsp;EMOTIONAL&nbsp;ERZÄHLT&nbsp;<b>/</b>&nbsp;</span>
+  </div>
+</div>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="stamps" id="stamps"></div>
+  <div class="wrap">
+    <h2 class="rv">Wir zeigen nicht nur, <em>was</em> Marken tun — sondern <em>wofür</em> sie stehen.</h2>
+    <div class="meta">
+      <div class="rv"><h5>Bureau</h5><p>Werbefilmproduktion<br>Hamburg, Deutschland</p></div>
+      <div class="rv"><h5>Adresse</h5><p>Stockmeyerstraße 43<br>Halle 4A · 20457</p></div>
+      <div class="rv"><h5>Haltung</h5><p>Echte Geschichten<br>Kein Stock. Keine Floskeln.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATE -->
+<section class="formate" id="formate">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="rv">
+        <span class="eyebrow">Signature Formate — 03</span>
+        <h2 class="sechead">Drei<br>Formate.</h2>
+      </div>
+      <p class="rv">Jedes Format löst eine konkrete Aufgabe — von der Markenvision bis zur offenen Stelle.</p>
+    </div>
+
+    <div class="fitem rv">
+      <span class="idx">F.01</span>
+      <h3>Super<br>Brand&nbsp;Film</h3>
+      <div class="fd"><p>Deine Marke emotional erzählt und visuell stark inszeniert. Für mehr Sichtbarkeit, Vertrauen und Wirkung.</p><span class="for">Für Marketing &amp; Geschäftsführung</span></div>
+      <span class="ar">→</span>
+    </div>
+    <div class="fitem rv">
+      <span class="idx">F.02</span>
+      <h3>Super<br>Visionaries</h3>
+      <div class="fd"><p>Mut trifft Kamera. Edgy Portraitserie über Menschen mit Haltung, Ideen und Drive.</p><span class="for">Für Geschäftsführung</span></div>
+      <span class="ar">→</span>
+    </div>
+    <div class="fitem rv">
+      <span class="idx">F.03</span>
+      <h3>Super<br>HR&nbsp;Film</h3>
+      <div class="fd"><p>Echte Einblicke. Echte Verbindungen. Authentische Mitarbeitendenportraits für starke Arbeitgeber.</p><span class="for">Für HR &amp; Recruiting</span></div>
+      <span class="ar">→</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJEKTE -->
+<section class="projekte" id="projekte">
+  <div class="wrap">
+    <div class="sec-top">
+      <div class="rv">
+        <span class="eyebrow">Ausgewählte Arbeiten</span>
+        <h2 class="sechead">Mit<br>Handschrift.</h2>
+      </div>
+      <p class="rv">Mutig, visuell stark und immer mit dem Ziel, echte Verbindungen zu schaffen.</p>
+    </div>
+
+    <div class="feat2">
+      <article class="feat vid rv" data-yt="6v0Mm45fCpM">
+        <div class="fimg shot blue"><img src="assets/thumbs/6v0Mm45fCpM.jpg" alt="Super Brand Film"><span class="play"></span></div>
+        <div class="ft"><h3>Super Brand Film</h3><p>Deine Marke erzählt ihre Geschichte — so authentisch, dass sie niemand mehr vergisst.</p><span class="tg">P.01 / Brand</span></div>
+      </article>
+      <article class="feat vid rv" data-yt="r2kKJc6xLnk">
+        <div class="fimg shot orange"><img src="assets/thumbs/r2kKJc6xLnk.jpg" alt="Super HR Film"><span class="play"></span></div>
+        <div class="ft"><h3>Super HR Film</h3><p>Authentische Mitarbeitenden-Portraits, die echte Einblicke geben und Talente anziehen.</p><span class="tg">P.02 / HR</span></div>
+      </article>
+    </div>
+
+    <div class="visihead">
+      <h3>Super Visionaries</h3>
+      <span>Portraitserie · Mut trifft Kamera · 07</span>
+    </div>
+    <div class="vgrid">
+      <article class="vcard vid rv" data-yt="bd8pfX9EhsY"><div class="vimg shot bw"><img src="assets/thumbs/bd8pfX9EhsY.jpg" alt="Pascal Kerouche"><span class="play"></span></div><div class="nm"><b>Pascal K.</b><span>V.01</span></div></article>
+      <article class="vcard vid rv" data-yt="S-tsUkk74Sw"><div class="vimg shot orange"><img src="assets/thumbs/S-tsUkk74Sw.jpg" alt="Linda Böse"><span class="play"></span></div><div class="nm"><b>Linda B.</b><span>V.02</span></div></article>
+      <article class="vcard vid rv" data-yt="MnywW7w1XTs"><div class="vimg shot blue"><img src="assets/thumbs/MnywW7w1XTs.jpg" alt="Vigdis"><span class="play"></span></div><div class="nm"><b>Vigdis</b><span>V.03</span></div></article>
+      <article class="vcard vid rv" data-yt="a2le1CCfrCc"><div class="vimg shot bw"><img src="assets/thumbs/a2le1CCfrCc.jpg" alt="Phillip Ries"><span class="play"></span></div><div class="nm"><b>Phillip R.</b><span>V.04</span></div></article>
+      <article class="vcard vid rv" data-yt="PgUafBs3iAs"><div class="vimg shot blue"><img src="assets/thumbs/PgUafBs3iAs.jpg" alt="Goldjunge"><span class="play"></span></div><div class="nm"><b>Goldjunge</b><span>V.05</span></div></article>
+      <article class="vcard vid rv" data-yt="eyl98UAluoY"><div class="vimg shot orange"><img src="assets/thumbs/eyl98UAluoY.jpg" alt="Simon Burgunder"><span class="play"></span></div><div class="nm"><b>Simon B.</b><span>V.06</span></div></article>
+      <article class="vcard vid rv" data-yt="FkaCXbC0NLU"><div class="vimg shot bw"><img src="assets/thumbs/FkaCXbC0NLU.jpg" alt="Hyperfocus"><span class="play"></span></div><div class="nm"><b>Hyperfocus</b><span>V.07</span></div></article>
+      <article class="vcard rv"><div class="vmore"><a href="#kontakt"><b>Alle<br>ansehen</b><span>→ Serie</span></a></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO -->
+<section class="studio" id="studio">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="eyebrow rv">Das Studio — Hamburg</span>
+        <blockquote class="rv">Die besten Filme verkaufen nicht. Sie machen Menschen zu <em>Fans.</em></blockquote>
+        <p class="body rv">SUPER NEU ist eine Werbefilmproduktion aus Hamburg, gegründet von Henning Schulze und Henry Bigalke. Wir denken strategisch und erzählen emotional — nah an der Marke, nah an den Menschen.</p>
+        <div class="crew rv">
+          <div class="c"><span class="mav">HS</span><div><b>Henning Schulze</b><span>Gründer · Regie</span></div></div>
+          <div class="c"><span class="mav">HB</span><div><b>Henry Bigalke</b><span>Gründer · Produktion</span></div></div>
+        </div>
+      </div>
+      <div class="pic shot rv"><img src="assets/henning-henry-01.jpg" alt="Henning &amp; Henry"><span class="lbl">Henning &amp; Henry · Hamburg</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="kontakt">
+  <img src="assets/superneu-logo.png" alt="" class="mk" aria-hidden="true">
+  <div class="wrap inner">
+    <span class="eyebrow rv">Bereit?</span>
+    <h2 class="rv">Lass uns<br><em>Fans</em><br>machen.</h2>
+    <div class="row rv">
+      <a href="mailto:super@superneu.co" class="btn pop">Projekt anfragen →</a>
+      <a class="btn" data-yt="6v0Mm45fCpM" style="cursor:pointer">Showreel ansehen</a>
+    </div>
+    <div class="contact rv">
+      <div><span class="ck">Telefon</span><a href="tel:+4917032856449">+49 170 328 564 9</a></div>
+      <div><span class="ck">E-Mail</span><a href="mailto:super@superneu.co">super@superneu.co</a></div>
+      <div><span class="ck">Studio</span><span class="v">Stockmeyerstr. 43 · 20457 HH</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fl"><img src="assets/superneu-logo.png" alt="Super Neu"></div>
+    <div class="fnav"><a href="#formate">Formate</a><a href="#projekte">Projekte</a><a href="#studio">Studio</a><a href="#kontakt">Kontakt</a><a href="#">Instagram</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+    <span class="cap">© 2026 Super Neu · 20457 Hamburg</span>
+  </div>
+</footer>
+
+<!-- STICKY ACTION BAR (mobile only) -->
+<div class="actionbar">
+  <a href="tel:+4917032856449" class="call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Anrufen</a>
+  <a href="mailto:super@superneu.co" class="ask">Projekt anfragen →</a>
+</div>
+
+<script>
+(function(){var r=document.getElementById('slashrow');if(r)r.innerHTML+=r.innerHTML;})();
+
+(function(){
+  var box=document.getElementById('stamps');if(!box)return;
+  var svg='<svg viewBox="0 0 150 150"><defs><path id="cp" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs>'+
+    '<circle cx="75" cy="75" r="73" fill="none" stroke="#000" stroke-width="2"/>'+
+    '<text font-family="Space Mono,monospace" font-size="12" font-weight="700" letter-spacing="3" fill="#000"><textPath href="#cp" startOffset="0">SUPER NEU ✺ WERBEFILM ✺ HAMBURG ✺ </textPath></text>'+
+    '<text x="75" y="82" text-anchor="middle" font-size="26" fill="#000">✺</text></svg>';
+  for(var i=0;i<3;i++){var d=document.createElement('div');d.className='stamp';d.innerHTML=svg;box.appendChild(d);}
+})();
+
+var burger=document.getElementById('burger'),mmenu=document.getElementById('mmenu'),mclose=document.getElementById('mclose');
+burger.addEventListener('click',function(){mmenu.classList.add('open')});
+mclose.addEventListener('click',function(){mmenu.classList.remove('open')});
+mmenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mmenu.classList.remove('open')})});
+
+var rvEls=[].slice.call(document.querySelectorAll('.rv'));
+function forceShow(){rvEls.forEach(function(el){el.style.transition='none';el.style.opacity='1';el.style.transform='none';})}
+if('IntersectionObserver' in window){
+  document.documentElement.classList.add('reveal-on');
+  var ioFired=false;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){ioFired=true;e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.05,rootMargin:'0px 0px -4% 0px'});
+  rvEls.forEach(function(el,i){el.style.transitionDelay=(Math.min(i%3,2)*55)+'ms';io.observe(el);});
+  setTimeout(function(){if(!ioFired)forceShow();},700);
+}
+
+(function(){var st=document.createElement('style');st.textContent='.ytc{position:absolute;inset:0;z-index:3;background:#0d0d10;border:2px solid #FF4A1C;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center}.ytc.hide{display:none}.ytc .in{max-width:460px;color:#F2EFE6;font-family:Space Mono,monospace}.ytc strong{display:block;font-family:Bricolage Grotesque,sans-serif;font-weight:800;text-transform:uppercase;font-size:22px;letter-spacing:-.01em;margin-bottom:12px}.ytc p{font-size:12px;line-height:1.65;color:rgba(242,239,230,.72);margin-bottom:18px}.ytc .load{font-family:Space Mono,monospace;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:13px;background:#FF4A1C;color:#000;border:2px solid #000;padding:14px 24px;cursor:pointer}.ytc label{display:flex;gap:8px;align-items:center;justify-content:center;font-size:11px;color:rgba(242,239,230,.6);margin-top:18px;cursor:pointer}.ytc .dpl{color:#FF4A1C;text-decoration:underline}';document.head.appendChild(st);})();
+var lb=document.createElement('div');lb.className='lb';
+lb.innerHTML='<div class="box"><button class="close" aria-label="Schließen">×</button><div class="ytc"><div class="in"><strong>Externes Video · YouTube</strong><p>Beim Laden wird eine Verbindung zu YouTube (Google Ireland Ltd.) hergestellt; dabei können Daten übertragen und Cookies gesetzt werden. Mehr dazu in der <a class="dpl" href="datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.</p><button class="load" type="button">Video laden ▸</button><label><input type="checkbox" class="rem"> Für diesen Besuch merken</label></div></div><iframe allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe></div>';
+document.body.appendChild(lb);
+var lbf=lb.querySelector('iframe'),ytc=lb.querySelector('.ytc'),rem=lb.querySelector('.rem'),curId=null;
+function granted(){try{return sessionStorage.getItem('sn_yt')==='1'}catch(e){return false}}
+function play(id){lbf.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';ytc.classList.add('hide');}
+function openLb(id){curId=id;lb.classList.add('open');document.body.style.overflow='hidden';if(granted()){play(id);}else{ytc.classList.remove('hide');lbf.src='';}}
+function closeLb(){lb.classList.remove('open');lbf.src='';document.body.style.overflow='';}
+lb.querySelector('.load').addEventListener('click',function(){if(rem.checked){try{sessionStorage.setItem('sn_yt','1')}catch(e){}}if(curId)play(curId);});
+lb.addEventListener('click',function(e){if(e.target===lb||e.target.classList.contains('close'))closeLb();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))closeLb();});
+document.querySelectorAll('[data-yt]').forEach(function(el){el.addEventListener('click',function(){openLb(el.getAttribute('data-yt'))})});
+</script>
+</body>
+</html>
